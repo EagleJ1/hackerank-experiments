@@ -15,28 +15,24 @@ public class Tweets {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
         String timeDomain = sc.nextLine();
         sc.nextLine();
 
 
         List<String> l = new ArrayList<String>();
 
-        while (sc.hasNextLine() == true ) {
+        while (sc.hasNextLine() == true) {
             l.add(sc.nextLine());
         }
 
         List<Tweet> tweets = filter(l, timeDomain);
-        for (Tweet t : tweets )
-        {
+        for (Tweet t : tweets) {
 
             String newLine = "";
-            for (int i = 0; i<tweets.size();i++)
-            {
-                if (tweets.get(i).getTime() == t.getTime())
-                {
-                    if (!tweets.get(i).getText().equals(t.getText()))
-                    {
+            for (int i = 0; i < tweets.size(); i++) {
+                if (tweets.get(i).getTime() == t.getTime()) {
+                    if (!tweets.get(i).getText().equals(t.getText())) {
                         newLine = newLine + tweets.get(i).getText();
                         tweets.remove(tweets.get(i));
                     }
@@ -47,28 +43,25 @@ public class Tweets {
         }
     }
 
-    public static List<Tweet> filter(List<String> allList, String timeDomain)
-    {
-        String [] timeDomains = timeDomain.split(",");
+    public static List<Tweet> filter(List<String> allList, String timeDomain) {
+        String[] timeDomains = timeDomain.split(",");
 
         int beginTime = convertTime(timeDomains[0]);
         int endTime = convertTime(timeDomains[1]);
 
         List<Tweet> newList = new ArrayList<Tweet>();
 
-        for (int i = 0 ; i < allList.size(); i++)
-        {
-            String [] rowFields = allList.get(i).split(",");
-            int rowTime = convertTime(rowFields[0].substring(0,7));
-            if( (rowTime <= endTime) && (rowTime >= beginTime))
-            {
+        for (int i = 0; i < allList.size(); i++) {
+            String[] rowFields = allList.get(i).split(",");
+            int rowTime = convertTime(rowFields[0].substring(0, 7));
+            if ((rowTime <= endTime) && (rowTime >= beginTime)) {
                 String newLine = "";
-                for (int k = 1; k <rowFields.length; k++) {
+                for (int k = 1; k < rowFields.length; k++) {
                     newLine = newLine + rowFields[k] + ",";
                 }
                 Tweet tweet = new Tweet();
                 tweet.setTime(rowTime);
-                tweet.setTimeText(rowFields[0].substring(0,7));
+                tweet.setTimeText(rowFields[0].substring(0, 7));
                 tweet.setText(rowFields[1]);
                 tweet.setQuantity(Integer.parseInt(rowFields[2]));
                 newList.add(tweet);
@@ -80,26 +73,23 @@ public class Tweets {
     }
 
 
-
-    static class Tweet implements Comparable<Tweet>
-    {
+    static class Tweet implements Comparable<Tweet> {
 
         private int time;
         private String timeText;
         private String text;
         private int quantity;
 
-        public Tweet ()
-        {}
-        public Tweet (int time, String timeText, String text, int quantity)
-        {
+        public Tweet() {
+        }
+
+        public Tweet(int time, String timeText, String text, int quantity) {
             super();
             this.time = time;
             this.timeText = timeText;
             this.text = text;
             this.quantity = quantity;
         }
-
 
 
         public String getTimeText() {
@@ -138,21 +128,21 @@ public class Tweets {
             int compare = ((Tweet) o).getTime();
             return compare - this.time;
         }
+
         public static Comparator<Tweet> TweetComparator
                 = new Comparator<Tweet>() {
 
             public int compare(Tweet o1, Tweet o2) {
                 int qtty1 = o1.getQuantity();
                 int qtty2 = o2.getQuantity();
-                return  o2.compareTo(o1);
+                return o2.compareTo(o1);
             }
 
         };
     }
 
-    public static int convertTime(String time)
-    {
-        return  Integer.parseInt(time.trim().replace("-",""));
+    public static int convertTime(String time) {
+        return Integer.parseInt(time.trim().replace("-", ""));
 
 
     }
