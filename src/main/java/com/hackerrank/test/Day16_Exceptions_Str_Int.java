@@ -10,7 +10,21 @@ public class Day16_Exceptions_Str_Int {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String S = in.next();
+        in.close();
+        String msg = "";
+        try
+        {
+            int i = Integer.parseInt(S);
+            msg = String.valueOf(i);
 
-        //try
+        }catch (Exception ex)
+        {
+            msg = "Bad String";
+        }
+        finally {
+            System.out.println(msg);
+        }
+
+
     }
 }
