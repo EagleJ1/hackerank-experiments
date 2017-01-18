@@ -1,12 +1,6 @@
-package com.hackerrank.test;
+package com.hackerrank.test.challenging;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-
-import static com.hackerrank.test.Masking.maskedEmail;
-import static com.hackerrank.test.Masking.maskedNumber;
-import static com.hackerrank.test.Tweets.Tweet.TweetComparator;
 
 /**
  * Created by jackalhan on 1/14/17.

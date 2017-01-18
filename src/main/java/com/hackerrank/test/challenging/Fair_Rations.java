@@ -1,6 +1,5 @@
-package com.hackerrank.test;
+package com.hackerrank.test.challenging;
 
-import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 /**

@@ -1,4 +1,4 @@
-package com.hackerrank.test;
+package com.hackerrank.test.tutorial;
 
 /**
  * Created by jackalhan on 1/16/17.
