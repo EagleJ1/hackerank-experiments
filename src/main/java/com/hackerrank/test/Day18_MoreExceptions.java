@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by jackalhan on 1/16/17.
  */
-class Calculator
+class Calculatorx
 {
 
     int power(int number, int power) {
@@ -24,7 +24,7 @@ public class Day18_MoreExceptions {
         {
             int n = in.nextInt();
             int p = in.nextInt();
-            Calculator myCalculator = new Calculator();
+            Calculatorx myCalculator = new Calculatorx();
             try
             {
                 int ans=myCalculator.power(n,p);

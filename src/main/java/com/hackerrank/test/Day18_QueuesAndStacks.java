@@ -26,10 +26,10 @@ class Solution
     public void enqueueCharacter(char c) {
         queue.addLast(c);
     }
-
+ /*
     public char popCharacter() {
         return (char) stack.pop();
-    }
+    }*/
 
     public char dequeueCharacter() {
 
@@ -57,10 +57,10 @@ public class Day18_QueuesAndStacks {
         // Pop/Dequeue the chars at the head of both data structures and compare them:
         boolean isPalindrome = true;
         for (int i = 0; i < s.length/2; i++) {
-            if (p.popCharacter() != p.dequeueCharacter()) {
+            /*if (p.popCharacter() != p.dequeueCharacter()) {
                 isPalindrome = false;
                 break;
-            }
+            }*/
         }
 
         //Finally, print whether string s is palindrome or not.
