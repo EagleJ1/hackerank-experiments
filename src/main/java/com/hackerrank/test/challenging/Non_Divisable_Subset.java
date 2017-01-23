@@ -17,7 +17,7 @@ public class Non_Divisable_Subset {
         //		-	value as count of input numbers having remainder same as key
         // If we have numbers with remainders as 0 then we will consider only one of those as
         // subset with one number complies with subset criteria.
-        final Map<Integer, Integer> remainders = new HashMap<>();
+        final Map<Integer, Integer> remainders = new HashMap<Integer, Integer>();
         for(int i = 0; i < n; i++) {
             int remainder = in.nextInt() % k;
             remainders.compute(remainder, (key, value) -> (value == null || key == 0) ? 1 : (value + 1));
