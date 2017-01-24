@@ -46,25 +46,17 @@ public class Day22_Binary_Search_Trees {
 
     private static int getHeight(Node root) {
 
-        Node parent = root;
+        int heightleft = 0,
+                heightright = 0;
         Node current = root;
-
-        while (true) {
-            parent = current;
-            if (current.data > id) {
-                current = current.left;
-            } else {
-                current = current.right;
-            }
-            if (current == null) {
-                return false;
-            }
+        if (current.right != null) {
+            heightright = 1 + getHeight(current.right);
         }
-        while ((root.left == null) && (root.right == null)) {
-            if (root.left != null) {
-
-            }
+        if (current.left != null) {
+            heightleft = 1 + getHeight(current.left);
         }
+
+        return Math.max(heightleft, heightright);
     }
 
 }
