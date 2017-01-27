@@ -14,5 +14,6 @@ public class demo {
         System.out.println(counter);
         counter+=5;
         System.out.println(counter);
+        System.out.println((int)Math.sqrt(120));
     }
 }

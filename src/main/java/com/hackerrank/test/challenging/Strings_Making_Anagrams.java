@@ -1,5 +1,8 @@
 package com.hackerrank.test.challenging;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -9,21 +12,17 @@ public class Strings_Making_Anagrams {
 
     public static int numberNeeded(String first, String second) {
 
-        int counter = 0;
-        for (int i = 0; i < first.length(); i++) {
-            for (int j = 0; j < second.length(); j++) {
-
-                if (first.charAt(i) == second.charAt(j)) {
-                    counter = counter - j + 1;
-                    break;
-                } else {
-                    counter++;
-                }
-                if (j > second.length() - 1)
-                    j = 0;
-            }
+        int counters = 0;
+        int[] letters = new int['z' - 'a' + 1];
+        for (char ch : first.toCharArray())
+            letters[ch - 'a']++;
+        for (char ch : second.toCharArray())
+            letters[ch - 'a']--;
+        for (int counter : letters) {
+            counters += (counter < 0) ? -counter : counter;
         }
-        return counter;
+        return counters;
+
     }
 
     public static void main(String[] args) {
