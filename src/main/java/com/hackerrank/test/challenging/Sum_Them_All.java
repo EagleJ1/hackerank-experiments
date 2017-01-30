@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by jackalhan on 1/26/17.
  */
-public class SumThemAll {
+public class Sum_Them_All {
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
         final String fileName = System.getenv("OUTPUT_PATH");

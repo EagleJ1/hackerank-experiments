@@ -47,6 +47,12 @@ public class Recursive_Overlapping_Problem_Path_Option_Size {
         end = System.currentTimeMillis();
         System.out.format("%d miliseconds took for executing in Memoization approach", begin - end);
 
+        // Dynamic Programming without using memoization O(n^2)
+        begin = System.currentTimeMillis();
+        //System.out.println(countPaths(grid, 0, 0, storedPaths));
+        end = System.currentTimeMillis();
+        System.out.format("%d miliseconds took for executing in Memoization approach", begin - end);
+
 
         scanner.close();
 

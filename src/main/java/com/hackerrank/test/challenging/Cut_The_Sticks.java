@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by jackalhan on 1/16/17.
  */
-public class CutTheSticks {
+public class Cut_The_Sticks {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
