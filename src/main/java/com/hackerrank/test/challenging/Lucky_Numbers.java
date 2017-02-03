@@ -21,7 +21,7 @@ public class Lucky_Numbers {
             if (remainder11 == 0 || remainder4 == 0 || remainder7 == 0) {
                 result = "Yes";
             } else {
-                if (remainder11 % 4 == 0 || remainder11 % 7 == 0) {
+                if (remainder4 % 4 == 0 || remainder4 % 7 == 0 || remainder11 % 4 == 0 || remainder11 % 7 == 0 || remainder7 % 4 == 0 || remainder7 % 7 == 0 ) {
                     result = "Yes";
                 } else {
                     result = "No";
