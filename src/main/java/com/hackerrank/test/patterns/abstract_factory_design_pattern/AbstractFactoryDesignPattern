@@ -1,0 +1,26 @@
+What is the Abstract Factory Design Pattern?
+- It is like a factory, but everything is ENCAPSULATED
+    * The method => order the object
+    * The factories => build the object
+    * The final objects
+    * The final objects contain objects that use the Strategy Pattern
+        . COMPOSITION : Object class fields are objects
+
+What can you do with an Abstract Factory Pattern?
+- Allows you to create families of related objects without specifying concrete class
+- Use when you have many objects that can be added or changed dynamically during runtime.
+- You can model anything you can imagine and have those objects interact through common interfaces
+
+NEGATIVE :
+Things can get complicated :)
+
+SIMPLIFYING IT WITH SUCH AN EXAMPLE :
+1. Client wants factory to make an UFO
+2. Factory can have tools to create UFO, ROCKET AND BOSS UFO (You can extend by adding new tools or capabilities to the factory)
+3. When factory receives an UFO request, it shoots out abstract classes for each capabilities :
+    Abstract1 : name, speed, damage
+    Abstract2 : name, speed, damage
+    Abstract3 : name, speed, damage
+4. Then factory uses these abstact classes to create final product for example "UFO" or any other.
+5. The better side of it, these abstract classes need not to be the same of other ones, as long as they provide name, speed, damage,
+fields, any abstract class can be included in this whole process.
