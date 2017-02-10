@@ -13,25 +13,22 @@ public class EnemyShipTesting {
         // You send it a code using the orderTheShip method &
         // it sends the order to the right factory for creation
 
-        //EnemyShipBuilding makeShips = new
-        //Enemy ship object
-        /*EnemyShip theEnemy = null;
+        EnemyShipBuilding makeShips = new UFOEnemyShipBuilding();
+        EnemyShip theEnemy = null;
 
         Scanner userInput = new Scanner(System.in);
-        System.out.print("What type of ship? (U / R / B) : ");
+        System.out.print("What type of ship? (U / B) : ");
         if (userInput.hasNextLine()) {
             String shipTypeIndicator = userInput.nextLine();
-            theEnemy = shipFactory.makeEnemyShip(shipTypeIndicator);
+            theEnemy = makeShips.orderTheShip(shipTypeIndicator);
             if (theEnemy != null)
-                doStuffEnemy(theEnemy);
+                System.out.println(theEnemy);
             else
-                System.out.println("Enter a U, R, or B next time");
+                System.out.println("Enter a U, or B next time");
 
-        }*/
-    }
+        }
 
-    private static void doStuffEnemy(EnemyShip enemyShip) {
-        enemyShip.displayEnemyShip();
+
     }
 
 }

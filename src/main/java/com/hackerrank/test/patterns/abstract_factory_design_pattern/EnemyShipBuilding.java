@@ -13,17 +13,17 @@ public abstract class EnemyShipBuilding {
     // The specific parts used for engine & weapon depend
     // upon the String that is passed to this method
 
-    protected abstract EnemyShip buildingEnemyShip(String typeOfShip);
+    protected abstract EnemyShip makeEnemyShip(String typeOfShip);
 
     // When called a new EnemyShip is made. The specific parts are based on the String entered.
-    // After the ship is built, we execute multiple methods in the EnemyShip Object
+    // After the ship is maden, we execute multiple methods in the EnemyShip Object
 
     public EnemyShip orderTheShip(String typeOfShip) {
-        EnemyShip theEnemy = buildingEnemyShip(typeOfShip);
-       // theEnemy.makeShip();
+        EnemyShip theEnemy = makeEnemyShip(typeOfShip);
+        theEnemy.makeShip();
         theEnemy.displayEnemyShip();
-        //theEnemy.followeHeroShip();
-        //theEnemy.enemyShipShoots();
+        theEnemy.followHeroShip();
+        theEnemy.enemyShipShoots();
         return theEnemy;
     }
 
