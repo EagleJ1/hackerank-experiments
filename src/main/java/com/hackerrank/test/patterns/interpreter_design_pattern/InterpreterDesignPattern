@@ -1,0 +1,7 @@
+What is Interpreter Design Pattern?
+- Some myths are being talked for this pattern. Such as ;
+    * The Interpreter pattern is normally ignored
+    * The pattern is almost never used.
+- It is actually extremely useful if combined with Java Reflection techniques
+- It is used to convert on representation of data into another.
+

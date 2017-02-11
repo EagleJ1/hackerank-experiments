@@ -1,0 +1,6 @@
+What is Flyweight Design Pattern?
+- Used when you need to create a large number of similar objects (100.000 squares in screen)
+- To reduce memory usage your share objects that similar in someway rather than creating new ones
+- Intrinsic State : Color (similar color)
+- Extrinsic State : Size (different size)
+

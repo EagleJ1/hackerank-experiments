@@ -1,0 +1,17 @@
+What is State Design Pattern?
+- Allows an object to alter its behaviour when its internal state changes. The object will appear to change its class.
+- Context (Account) : Maintains an instance of a ConcreteState subclass that defines the current state.
+- State : Defines an interface for encapsulating the behaviour associated with a particular state of the Context.
+- Concrete State : Each subclass implements a behaviour associated with a state of Context
+
+Analogy ATM Machine :
+* ATM Has possible states,
+    - HasCardInserted
+    - NoCardInserted
+    - HasPin
+    - NoCash
+* Possible different ways the user could use an ATM.
+    - Insert Card
+    - Eject Card
+    - Insert Pin
+    - Request Cash
