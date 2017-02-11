@@ -1,0 +1,6 @@
+What is Iterator Design Pattern?
+- The Iterator pattern provides you with a uniform way to access different collections of Objects
+- If you get an Array, ArrayList, and Hastable of Objects, you pop out an iterator for each and treat them the same
+- This provides a univform way to cycle through different collections.
+- You can also write polymorphic code becayse you can refer to each collection of objects because they ll implement the same interface.
+

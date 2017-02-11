@@ -1,4 +1,4 @@
-package com.hackerrank.test.patterns.comman_design_pattern;
+package com.hackerrank.test.patterns.command_design_pattern;
 
 import java.util.List;
 

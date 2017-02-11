@@ -12,15 +12,14 @@ public class TestTheRemote {
         System.out.println("Test TV with Mute");
         theTV.buttonFivePressed();
         theTV.buttonSixPressed();
+        theTV.buttonSixPressed();
+        theTV.buttonSixPressed();
         theTV.buttonNinePressed();
+        theTV.deviceFeedback();
 
         System.out.println("\nTest TV with Pause");
         theTV2.buttonFivePressed();
-        theTV2.buttonFivePressed();
-        theTV2.buttonFivePressed();
-        theTV2.buttonFivePressed();
-        theTV2.buttonFivePressed();
-        theTV2.buttonFivePressed();
+        theTV2.buttonSixPressed();
         theTV2.buttonSixPressed();
         theTV2.buttonSixPressed();
         theTV2.buttonSixPressed();

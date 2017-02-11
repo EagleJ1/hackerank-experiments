@@ -1,4 +1,4 @@
-package com.hackerrank.test.patterns.comman_design_pattern;
+package com.hackerrank.test.patterns.command_design_pattern;
 
 /**
  * Created by jackalhan on 2/10/17.

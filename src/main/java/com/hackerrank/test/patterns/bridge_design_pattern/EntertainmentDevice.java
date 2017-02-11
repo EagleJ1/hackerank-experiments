@@ -30,7 +30,7 @@ public abstract class EntertainmentDevice {
             deviceState = 0;
         }
 
-        System.out.println("On " + deviceState);
+        System.out.println("On Channel " + deviceState);
     }
 
     public void buttonSevenPressed(){
