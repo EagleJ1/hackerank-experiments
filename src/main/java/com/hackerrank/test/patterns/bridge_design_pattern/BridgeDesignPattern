@@ -1,0 +1,33 @@
+What is Bridge Design Pattern?
+- Decouple an abstraction from its implementation so that the two can vary independently.
+- The Bridge Pattern is very poorly explained.
+- Everyone seems to explain it differently
+- Progressively adding functionality while separating out major differences using abstract classes.
+
+UML Description - Remote Anology:
+We want to create remote controls that are going to work differently depending upon very specific televisioins,
+Along the way, you want to define all of those attributes that each Tvs and devices will have, and then
+remote controls along with that so if you want to create the most abstract of tvs.
+It is a functionality that every single device ever is going to have actually in fact whether is a TV, DVD radio,. Each one of them
+is going to have a remote control that is going to control the volume so what we are going to define here
+in our first abstract class are the buttons that are going to define volume for all of our devices.
+7 is going to represent up volume and 8 is going to represent the down volume then afterwards
+we are going to create more concrete devices and this first TV is going to focus on what 6 and 5 will to do which means
+they are going to define that the channel number should increase six is pressed or decrease whenever 5 is pressed
+however, lets say 2nd TV is actually a DVD player in that situation button 6 will skip to next chapter, 5 is skipped to last chapter
+Thenwe come to our abstract remote control, what it is going to hold is a reference to the specific device either the basic
+basic TV or the TV like a 2nd TV which has a DVD player connected. It is then going to find all those abstract
+methods that are going to differ between remote 1 and remote 2. There is very specific differences are
+going to lay with button 9 in remote 1. Whenever button 9 in remote 1 is pressed is going to mute the sound,
+on the other hand, 9 in remote 2 is pressed, it will connect to DVR and pauses the TV broadcasting.
+So along the lines, we are adding different layer of functionality with an abstract class that lies between hence two layers
+of abstraction between classes and one class is going to be dependent upon the other
+
+
+When to use the Bridge Design Pattern?
+- When you want to be able to change both the abstractions (abstract classes) and concrete classes indepedently.
+- When you want the first abstract class to define rules (Abstract TV)
+- The concrete class adds additional rules (Concrete TV)
+- An abstract class has a reference to the device and it defines abstract methods that will be defined (Abstract Remote)
+- The concrete remote defines the abstract methods required.
+

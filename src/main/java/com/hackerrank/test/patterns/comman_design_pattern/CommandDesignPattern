@@ -1,0 +1,17 @@
+What is command design pattern?
+- The command pattern is a behavioural design pattern in which an object is used to reprsenes and encapsulate all the information needed to call a method at a later time.
+- This information includes the method name, the object that owns the method and values for the method parameters
+So,
+- Allows you to store lists of code that is excecuted at a later time or many times.
+- Client says I want a specific Command to run when execute() is called on 1 of these ENCAPSULATED (hidden)
+Objects
+- An object called the Invoker transfers this Command to aother Object called a Receiver to execute the right code.
+- Anaology : TurnTVOn (Command) -> DeviceButton(Class/Object) -> TurnTVOn- Television.TurnTVOn()
+
+What are the benefits of this pattern?
+- Allows you to set aside a list of commands for later use.
+- A class is a great place to store procedures you want to be executed
+- You can store multiple commands in a class to use over and over
+- You can implement undo procedures for past commands
+
+NEGATIVE : You create many small classes that store lists of commands
