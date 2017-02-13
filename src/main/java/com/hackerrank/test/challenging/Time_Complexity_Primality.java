@@ -17,25 +17,29 @@ public class Time_Complexity_Primality {
             System.out.println((n.isProbablePrime(5)) ? "Prime" : "Not prime");
             */
             // SOLUTION 2
+            boolean isPrime = true;
             int n = in.nextInt();
-            String result = "";
-            for (int i = 0; i < Math.sqrt(n); i += 2) {
-                if (i == 1 || i == 2) {
-                    result = "Prime";
-                } else {
-                    if (i % 2 == 0) {
-                        result = "Not prime";
+            if (n == 1) {
+                isPrime = false;
+            } else if (n > 2 && n % 2 == 0) {
+                isPrime = false;
+            } else {
+                int sqrtLimit = (int) Math.sqrt(n);
+                for (int i = 3; i <= sqrtLimit; i += 2) {
+                    if (n % i == 0) {
+                        isPrime = false;
                         break;
                     } else {
-                        result = "Prime";
+                        isPrime = true;
                     }
                 }
             }
-
-            System.out.println(result);
-
-
+            if (isPrime) {
+                System.out.println("Prime");
+            } else {
+                System.out.println("Not prime");
+            }
         }
-
     }
+
 }
