@@ -1,65 +1,67 @@
 package com.hackerrank.test.challenging;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by jackalhan on 2/14/17.
  */
+//BFS is designed for finding the shortest path.
+//BFS need some queue to track the next process
+
 public class BFS_Shortest_Reach_In_A_Graph {
+
+
     public static class Graph {
 
-        private Node[] nodes;
-        private int counter;
+        List<List<Integer>> adjLst;
+        int size;
+        private static int EDGE_DISTANCE = 6;
 
         public Graph(int size) {
-            nodes = new Node[size];
-            counter = 0;
+            adjLst = new ArrayList<>();
+            this.size = size;
+            while(size-- > 0)//Initialize the adjancency list.
+                adjLst.add(new ArrayList<Integer>());
         }
 
         public void addEdge(int first, int second) {
-            Node node = new Node(first, second);
-            nodes[counter] = node;
-            counter++;
+            // For undirected graph, you gotta add edges from both sides.
+            adjLst.get(first).add(second);
+            adjLst.get(second).add(first);
         }
 
         public int[] shortestReach(int startId) { // 0 indexed
-            Arrays.sort(nodes);
-            int [] path = new int[nodes.length];
-           return path;
+
+            // Special for this problem
+            int[] distances = new int[size];
+            Arrays.fill(distances, -1); // O(n) space.
+
+            Queue<Integer> queue = new LinkedList<>();
+            queue.add(startId); // Initialize queue.
+
+            distances[startId] = 0;
+
+            HashSet<Integer> discovered = new HashSet<>(); //O(n) space. Could be further optimized. I leave it to you to optimize it.
+            discovered.add(startId);
+
+            while (!queue.isEmpty()) {  // Standard BFS loop.
+                //REMOVE FIRST ELEMENT FROM QUEUE
+                int currentNode = queue.poll();
+                for (int neighbour : adjLst.get(currentNode)) {
+                    if (!discovered.contains(neighbour))
+                    {
+                        queue.offer(neighbour);
+                        discovered.add(neighbour); // Right place to add the visited / discovered set.
+                        distances[neighbour] = distances[currentNode] + EDGE_DISTANCE;
+                    }
+                }
+            }
+            return distances;
         }
+
     }
 
-    public static class Node implements Comparable {
-        private int id;
-        private int connectedId;
-        private int weight;
 
-        public Node(int newNodeId, int newConnectedId) {
-            this.id = newNodeId;
-            this.connectedId = newConnectedId;
-            this.weight = (newConnectedId != 0) ? 6 : -1;
-        }
-
-        private int getNodeId() {
-            return id;
-        }
-
-        private int getNodeConnectedId() {
-            return connectedId;
-        }
-
-        private int getWeight() {
-            return weight;
-        }
-
-        @Override
-        public int compareTo(Object o) {
-            Node node = (Node) o;
-            return this.id - node.id;
-        }
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

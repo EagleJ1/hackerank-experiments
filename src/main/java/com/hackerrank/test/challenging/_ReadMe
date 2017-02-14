@@ -1,0 +1,72 @@
+INTERV - 1
+1) Dynamic Programming
+2) Super recursion (permutation, combination,...2^n, m^n, n!...etc. type of program. (NP hard, NP programs)
+3) Probability related programs
+4) Graphs: BFS/DFS are usually enough
+5) All basic data structures from Arrays/Lists to circular queues, BSTs, Hash tables, B-Trees, and Red-Black trees, and all basic algorithms like sorting, binary search, median,...
+
+
+INTERV - 2
+1) A string consists of ‘0’, ‘1’ and '?'. The question mark can be either '0' or '1'. Find all possible combinations for a string.
+2) Give you a text file, remove duplicated lines. Follow up: If the file is very large, general hash map takes too much spaces, come up with a better solution.
+
+INTERV - 3
+1) BFS/DFS on a 2D matrix with certain extra conditions using   given functions
+
+INTERV - 4
+1) some basic string manipulation and 2d array questions, also asked about data structures and when to use which.
+(String buffer - String builder - String)
+
+INTERV - 6
+1) hash tables (basic knowledge, know what they do, how to use them), DFS and BFS on trees - know the difference between a binary tree and a binary search tree.
+
+INTERV - 7
+1) Write an algorithm to return the highest product of primes in an array.
+
+INTERV - 8
+1) Given two lists A and B containing sorted non-unique   integers, return the elements in A but not B and the elements in B but not A.
+2) Make a data structure for adding numbers, removing numbers   , and returning the median. Give the O(n) time of each operation.
+----------------------
+COMMENT : You could use a min and a max heap to keep track of the lower and upper half and rebalance if one grows at least 2 bigger than the other.
+The rebalancing would take O(lg(n)) (and only when it needs to occur) which means inserts and removals are only O(lg(n) + lg(n)) = O(lg(n))
+and median value is just a comparison of the top of the max heap for the lower end and the top of the min heap for the upper end in O(1).
+If median isn't called much inserts/deletes could be O(1) if you just fill a list and then only find the the median in O(n) time by doing a typical kth smallest
+where k = n/2 or n/2 and n/2 + 1 if in is odd.
+
+INTERV - 9
+1) return the biggest inclusive interval given the tuples
+
+INTERV - 10
+1) Every city has a calendar with different holiday periods. You may travel to another city only at the weekend.
+What is the maximum days of holiday that you can get in a year.
+----------------------
+COMMENT : Dynamic Programming with a matrix. One dimension is city other is time.
+
+2) When typing on the cellphone, how do you auto complete the possible words after two letters typed. Follow-up: How to rank the words if they are weighted by frequency.
+----------------------
+COMMENT : Trie + DFS
+          Follow up: record the frequency of letter in node and search the more frequent nodes first.
+
+3) Regex to validate email address
+4) Regex to validate phone
+
+INTERV - 11
+1) Linked list, two sum of linked list
+2) search in a dictionary recursively to find word
+
+INTERV - 14
+1) Given a count and maxvalue, write a program to return count number of unique random integers between 0 and maxvalue.
+
+INTERV - 15
+1) Find the longest path in a travel flights path which is a directed acyclic graphic
+
+INTERV - 16
+1) Eggs can be very hard or very fragile, which means they may break if dropped from the first floor or may not even break if dropped from 100th floor. Both eggs are identical. You need to figure out the highest floor of a 100-story building an egg can be dropped without breaking. The question is how many drops you need to make. You are allowed to break two eggs in…
+-------------------------------
+COMMENT : The idea should be used to use something like binary search, we first try to drop it from 50th floor and then so on, so in worst case / max steps will be required 49 i gues
+
+INTERV - 17
+1) One question involved creating a collection of the longest  common phrases between two strings.
+---------------------------------
+COMMENT : Pretty simple, created a list of common starting words, found longest continuous paths beginning at starting words,
+
