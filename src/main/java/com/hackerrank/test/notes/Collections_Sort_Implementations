@@ -1,0 +1,110 @@
+Custom object must implement two methods, generally IDE is helping developer to produce them.
+Without adding these methods, your object can not be used as a part of Collections. Because Collection super interface needs those
+equals and generation of unique id methods.
+
+1.  @Override
+    public boolean equals (Object obj)    // if two object is equal, return true
+    {......
+    }
+
+2. @Override
+    public int hashCode(){                // Producing an id different for twi different object, same for same object.
+    }
+
+
+Collection can be sorted by using  : Collections.sort (object)
+You can implement new comparision method based on the object you used in sorting method.
+For example :
+    List <String> animals = new ArrayList<String>();
+    animals.add("badsad")
+    ....
+
+    Collections.sort(animals)  // This can be sort based on natural alphabetically order.
+
+But if you implement new String based comparator to the sort, you can change the behaviour of sorting. For example
+
+Class StringLenghtComparator implements Comparator<String>{
+    @Override
+    public int compare(String s1, String s2){ //  Compare method has three values to return
+         int len1 = s1.length();              //    1 : Satisfies -> put len1 on first
+         int len2 = s2.length();              //   -1 : Not Satisfies -> put len2 on first
+         if (len1 > len2){                    //    0 : As is -> Same keep as it is
+            return 1;
+         } else if (len1 < len2){
+            return -1;
+         } else{
+            retun 0;
+         }
+
+    }
+}
+
+Now you can use this seperate Comparator into the method. How, below:
+
+    Collections.sort(animals, new StringLenghtComparator()); // With this, can be sort based on String length.
+
+In addition to that, instead of using seperate Comparator class, you can also implement your compare methid inside the method. How below?
+
+    Collections.sort(animals, new Comparator<String>{
+             @Override
+            public int compare(String s1, String s2){
+                 int len1 = s1.length();
+                 int len2 = s2.length();
+                 if (len1 > len2){
+                    return 1;
+                 } else if (len1 < len2){
+                    return -1;
+                 } else{
+                    retun 0;
+                 }
+
+            }
+    });
+
+NOTE 1 : Since we used ArrayList for this example, this list allows duplicate values which means that based on our implementation two values that has same
+length can be in same list, however, if we could use Set instead of List, we should modify our compare methods because, SET does not allow duplicate values
+so same length of strings will be ignored. Only the one, who inserted as a last item will be kept in the list.
+
+NOTE 2 : For the Custom object, Collections.sort can not work unless custom object do not implement Comparator<CustomObject> interface and compare method as well as hashcode and equals methods
+on their definition, Or implement it into sort method as we have seen above. If you want to reverse your sorting implementation, what you need to do is make positive numbers to negative
+and negative number to positive. -1 to 1 and 1 to -1.
+You may also use Collections.reverseOrder(list);
+
+NOTE 3 : If you give a natural ordering skills to your object while you are using it as a TreeSet, you have to implement Comparable<CustomObject> interface in your custom object.
+This interface will force you to implement compareTo, hashCode and equals methods. Otherwise, you can not even add elements to your treeset object.
+How you can do it, look at the below :
+For example ;
+
+    Class Person implements Comparable<Person>{
+        private String name;
+        public Person(String name){
+        this.name = name
+        }
+
+        public String toString(){
+            return name;
+        }
+
+        @Override
+        public int hashCode(){
+            return someId;
+        }
+
+        @Override
+        public boolean equals(){
+        .....
+            return false ;
+        .....:
+            return true;
+
+        }
+
+        @Override
+        public int compareTo(Person p){   //  Compare method has three values to return
+                                          //  1 : Satisfies -> put len1 on first
+                                          //    0 : As is -> Same keep as it is
+            return name.compareTo(p.name); // String alows you compare strings with compareTo. For reverseSort you can put a "-" sign at the begining of name.compareTo(p.name);
+        }
+    }
+
+

@@ -1,0 +1,210 @@
+Super Interface : COLLECTIONS
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+****** Sub Interface ****** : LIST
+**************************************************************************************************
+Characteristic  : 1. Can store duplicate elements.
+                  2. Working Index based
+                  3. Search is fast with the index
+==================================================================================================
+Object          : ArrayList
+--------------------------------------------------------------------------------------------------
+Implementation  : List<Template> list1 = new ArrayList<Template>(initial size ); //default 10 or 16
+                  ArrayList<Template> list2 = new ArrayList<Template>();
+                  Collection<Template> list3 = new ArrayList<Template>();
+Adding          : list.add(blabla);
+Retrieving      : list.get(index);
+Removing        : list.remove(index);
+*****************
+Keynotes        : 1. Prevent insertion order
+Advantages      : 1. Very efficient for adding element at the end of the list and unless frequent manipulations/modifications.
+Disadvantages   : 1. Very slow if you manipulate an element which is in beginning or early phase of the list.
+                  Because, it is shifting all elements to the index which is available after removed element.
+                  2. Not a thread safe
+==================================================================================================
+Object          : LinkedList
+--------------------------------------------------------------------------------------------------
+Implementation  : List<Template> list1 = new LinkedList<Template>(initial size ); //default 10 or 16
+                  LinkedList<Template> list2 = new LinkedList<Template>();
+                  Collection<Template> list3 = new LinkedList<Template>();
+Adding          : list.add(blabla);
+Retrieving      : list.get(index);
+Removing        : list.remove(index);
+*****************
+Keynotes        : 1. Prevent insertion order
+Advantages      : 1. Very efficient for adding element at the end of the list and also if you do lost of manipulations or modifications in list..
+Disadvantages   : 1. Very efficient because it is just changing references to the next element / previous element since it has both side references
+                  2. Not a thread safe
+==================================================================================================
+Object          : Vector
+--------------------------------------------------------------------------------------------------
+Implementation  : List<Template> list1 = new Vector<Template>(initial size ); //default 10
+                  Vector<Template> list2 = new Vector<Template>();
+                  Collection<Template> list3 = new Vector<Template>();
+Adding          : list.add(blabla);
+Retrieving      : list.get(index);
+Removing        : list.remove(index);
+*****************
+Keynotes        : 1. Prevent insertion order
+Advantages      : 1. ?
+                  2. Thread Safe. It allows only one thread to work with the list, others need to wait.
+Disadvantages   : 1. ?
+==================================================================================================
+==================================================================================================
+==================================================================================================
+==================================================================================================
+****** Sub Interface ****** : SET
+**************************************************************************************************
+Characteristic  : 1. Do not allow duplicate elements (Same results from hashcode and equals method of object)
+                  2. To find INTERSECTIONS between two sets, basically what you need to is :
+                  Let us say that, you have set1 and set2. On top of these,
+                  You need to create third set which keeps INTERSECTIONS for example :
+                    Set<String> intersection = new HashSet<String>(set1);
+                  Than, you compate this set with the set2 by typing :
+                    intersection.retainAll(set2);
+                  by the end of this code, you can get the INTERSECTED elements between set1 and set2.
+                  3. To find DIFFERENCES between two sets, basically what you need to is :
+                  Let us say that, you have set1 and set2. On top of these,
+                  You need to create third set which keeps DIFFERENCES for example :
+                    Set<String> differences = new HashSet<String>(set1);
+                  Than, you compate this set with the set2 by typing :
+                    differences.removeAll(set2);
+                  by the end of this code, you can get the DIFFERENCE elements between set1 and set2.
+==================================================================================================
+Object          : HashSet
+--------------------------------------------------------------------------------------------------
+Implementation  : Set<Template> set1 = new HashSet<Template>(initial size ); //default 16
+                  HashSet<Template> set2 = new HashSet<Template>();
+                  Collection<Template> set3 = new HashSet<Template>();
+Adding          : set.add(blabla);
+Retrieving      : Iteration | for (String item : set1) { System.out.println(set1); }
+Removing        : set.remove(index);
+*****************
+Keynotes        : 1. Do not prevent insertion order. Randomly display list.
+                  2. Allow only 1 "NULL" value
+Advantages      : ?
+Disadvantages   : ?
+==================================================================================================
+Object          : TreeSet
+--------------------------------------------------------------------------------------------------
+Implementation  : Set<Template> set1 = new TreeSet<Template>(initial size ); //default not a boudary?
+                  TreeSet<Template> set2 = new TreeSet<Template>();
+                  Collection<Template> set3 = new TreeSet<Template>();
+Adding          : set.add(blabla);
+Retrieving      : Iteration | for (String item : set1) { System.out.println(set1); }
+Removing        : set.remove(index);
+*****************
+Keynotes        : 1. Sorted natural order. (Ascending / Descending)
+Advantages      : ?
+Disadvantages   : ?
+==================================================================================================
+Object          : LinkedHashSet
+--------------------------------------------------------------------------------------------------
+Implementation  : Set<Template> set1 = new LinkedHashSet<Template>(initial size ); //default 16?
+                  LinkedHashSet<Template> set2 = new LinkedHashSet<Template>();
+                  Collection<Template> set3 = new LinkedHashSet<Template>();
+Adding          : set.add(blabla);
+Retrieving      : Iteration | for (String item : set1) { System.out.println(set1); }
+Removing        : set.remove(index);
+*****************
+Keynotes        : 1. Prevent Insertion Order, remembers the order you added items into the list
+Advantages      : ?
+Disadvantages   : ?
+==================================================================================================
+==================================================================================================
+==================================================================================================
+==================================================================================================
+****** Sub Interface ****** : MAP
+**************************************************************************************************
+Characteristic  : 1. Do not allow duplicate key
+                  2. Index based Key - Value pair relation
+==================================================================================================
+Object          : HashMap
+--------------------------------------------------------------------------------------------------
+Implementation  : Map<Template, Template> map1 = new HashMap<Template, Template>(initial size ); //default 16
+                  HashMap<Template, Template> map2= new HashMap<Template, Template>();
+                  Collection<Template, Template> map3= new HashMap<Template, Template>();
+Adding          : map.put(blaaab, blabla);
+Retrieving      : map.get(index)  || Iteration : for (Map.Entry<Integer, String> entry : map.entrySet()){
+                                                      int key = entry.getKey();
+                                                      int value = entry.getValue();
+                                                      }
+Removing        : map.remove(index);
+*****************
+Keynotes        : 1. Do not prevent insertion order. Randomly display list.
+                  2. Allow only 1 "NULL" KEY but multiple "NULL" values,
+Advantages      : ?
+Disadvantages   : 1. Not a thread safe
+==================================================================================================
+Object          : HashTable
+--------------------------------------------------------------------------------------------------
+Implementation  : Map<Template, Template> map1 = new HashTable<Template, Template>(initial size ); //default 16
+                  HashTable<Template, Template> map2= new HashTable<Template, Template>();
+                  Collection<Template, Template> map3= new HashTable<Template, Template>();
+Adding          : map.put(blaaab, blabla);
+Retrieving      : map.get(index) || Iteration : for (Map.Entry<Integer, String> entry : map.entrySet()){
+                                                     int key = entry.getKey();
+                                                     int value = entry.getValue();
+                                                 }
+Removing        : map.remove(index);
+*****************
+Keynotes        : 1. Do not prevent insertion order. Randomly display list.
+                  2. No allow "NULL" KEY
+Advantages      : ?
+Disadvantages   : 1. Thread safe
+==================================================================================================
+Object          : LinkedHashMap
+--------------------------------------------------------------------------------------------------
+Implementation  : Map<Template, Template> map1 = new LinkedHashMap<Template, Template>(initial size ); //default 16
+                  LinkedHashMap<Template, Template> map2= new LinkedHashMap<Template, Template>();
+                  Collection<Template, Template> map3= new LinkedHashMap<Template, Template>();
+Adding          : map.put(blaaab, blabla);
+Retrieving      : map.get(index) || Iteration : for (Map.Entry<Integer, String> entry : map.entrySet()){
+                                                     int key = entry.getKey();
+                                                     int value = entry.getValue();
+                                                 }
+Removing        : map.remove(index);
+*****************
+Keynotes        : 1. Prevent insertion order.
+Advantages      : ?
+Disadvantages   : 1. Not a Thread safe
+==================================================================================================
+Object          : TreeMap
+--------------------------------------------------------------------------------------------------
+Implementation  : Map<Template, Template> map1 = new TreeMap<Template, Template>(initial size ); //default 16
+                  TreeMap<Template, Template> map2= new TreeMap<Template, Template>();
+                  Collection<Template, Template> map3= new TreeMap<Template, Template>();
+Adding          : map.put(blaaab, blabla);
+Retrieving      : map.get(index) || Iteration : for (Map.Entry<Integer, String> entry : map.entrySet()){
+                                                     int key = entry.getKey();
+                                                     int value = entry.getValue();
+                                                 }
+Removing        : map.remove(index);
+*****************
+Keynotes        : 1. Sorted Natural order.
+Advantages      : ?
+Disadvantages   : 1. Not a Thread safe
+==================================================================================================
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************
+****** Sub Interface ****** : QUEUE
+**************************************************************************************************
+Characteristic  : 1. FIFO.
+                  2. Head and Tail
+                  3. ?
+==================================================================================================
+Object          : Queue
+--------------------------------------------------------------------------------------------------
+Implementation  : Queue<Template> queue1 = new ArrayBlockingQueue<Template>(initial size ); //default 0, you need to specify size of the queue.
+                  Collection<Template> queue2 = new LinkedList<Template>(); //No boundary, no limit. If you want you can specify a size.
+                  .....lots of base class can be used.
+Adding          : queue1.add(blabla) can throw exception therefore best usage is queue1.offer(bababa); It add an item to the tail of the queue.
+Retrieving      : queue1.element() can throw exception therefore best usage is queue1.peek(); It show the the head item of the queue.
+Removing        : queue1.remove() can throw exception therefore best usage is queue1.poll(); It removes and shows the head item from the queue.
+*****************
+Keynotes        : 1. Prevent insertion order
+Advantages      : 1. Very efficient for adding element at the end of the list and unless frequent manipulations/modifications.
+Disadvantages   : 1. Very slow if you manipulate an element which is in beginning or early phase of the list.
+                  Because, it is shifting all elements to the index which is available after removed element.
+                  2. Not a thread safe
