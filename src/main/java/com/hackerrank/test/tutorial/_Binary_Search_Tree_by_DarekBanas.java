@@ -4,7 +4,7 @@ package com.hackerrank.test.tutorial;
  * Created by jackalhan on 2/15/17.
  */
 
-public class Binary_Search_Tree_by_DarekBanas {
+public class _Binary_Search_Tree_by_DarekBanas {
 
     public static class BinaryTree {
         Node root;

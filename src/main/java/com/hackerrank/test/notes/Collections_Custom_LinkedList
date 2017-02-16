@@ -1,0 +1,30 @@
+A link is an object
+Each link has a ref to another link in the list
+The linkedList has only a reference to the last Link added to it.
+ANAOLOGY
+LinkedList = (bilir kisi, observer) I have the address for the newest guy in town.
+firstLink = I am the newest guy, and I have the address for the Guy who moved in here before me.
+next = I am the guy who is known by firstLink the guy who moved here after me.
+
+NEW LINK ADDED ?
+New Link is created.
+This new link's next will be referencing to the current firstlink
+Than, linkedlist's firstlink will be the new link in linkedlist.
+
+LINK REMOVED?
+The linkedList's firstLink is assigned the value of the current firstlink's next
+
+CYCLE THROUGH ALL LINKS
+Start at the reference stored in firstLink for the LinkedList
+Get the references stored in next for every Link until next returns null
+
+FIND A LINK IN LINKED LISTS
+Check the data for the firstlink reference stored in the linkedlist
+if you do not get a match continue searching every reference stored in next until next returns null.
+
+HOW TO REMOVE SPECIFIC LINK?
+Cycle through all Links until there is a match
+If the referenced Link stored in the LinkedList's firstLink matches
+    - Store the reference next in firstLink as firstLink
+if a match occurs elsewhere, find the Link that next equals the ref to remove
+Get the reference named next in the link to remove and assign it to the link above.
