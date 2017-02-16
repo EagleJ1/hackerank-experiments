@@ -3,8 +3,10 @@ Super Interface : COLLECTIONS
 ****** Sub Interface ****** : LIST
 **************************************************************************************************
 Characteristic  : 1. Can store duplicate elements.
-                  2. Working Index based
-                  3. Search is fast with the index
+                  2. Working Index Integer based
+                  3. Checking item in list is slow
+                  4. Looking an item by index is fast
+                  5. Iterating through lists is relatively fast
 ==================================================================================================
 Object          : ArrayList
 --------------------------------------------------------------------------------------------------
@@ -55,14 +57,16 @@ Disadvantages   : 1. ?
 ****** Sub Interface ****** : SET
 **************************************************************************************************
 Characteristic  : 1. Do not allow duplicate elements (Same results from hashcode and equals method of object)
-                  2. To find INTERSECTIONS between two sets, basically what you need to is :
+                  2. Not indexed
+                  3. Very fast to check object exists ?
+                  3. To find INTERSECTIONS between two sets, basically what you need to is :
                   Let us say that, you have set1 and set2. On top of these,
                   You need to create third set which keeps INTERSECTIONS for example :
                     Set<String> intersection = new HashSet<String>(set1);
                   Than, you compate this set with the set2 by typing :
                     intersection.retainAll(set2);
                   by the end of this code, you can get the INTERSECTED elements between set1 and set2.
-                  3. To find DIFFERENCES between two sets, basically what you need to is :
+                  4. To find DIFFERENCES between two sets, basically what you need to is :
                   Let us say that, you have set1 and set2. On top of these,
                   You need to create third set which keeps DIFFERENCES for example :
                     Set<String> differences = new HashSet<String>(set1);
@@ -116,7 +120,9 @@ Disadvantages   : ?
 ****** Sub Interface ****** : MAP
 **************************************************************************************************
 Characteristic  : 1. Do not allow duplicate key
-                  2. Index based Key - Value pair relation
+                  2. Index based Key - Value pair relation. Retrieving a value by key is fast.
+                  3. Iterating over maps is slow
+                  4. For custom object, must implement hashCode() and equals() method
 ==================================================================================================
 Object          : HashMap
 --------------------------------------------------------------------------------------------------
