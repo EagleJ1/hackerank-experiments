@@ -29,7 +29,7 @@ public class A_Tale_Of_Two_Stacks {
             return stackOldestOnTop.pop();
         }
 
-        void regulateStacks(){
+        void regulateStacks() {
             if (stackOldestOnTop.empty()) {
                 while (!stackNewestOnTop.isEmpty()) {
                     stackOldestOnTop.push(stackNewestOnTop.pop());
