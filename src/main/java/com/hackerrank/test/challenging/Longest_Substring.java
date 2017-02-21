@@ -13,16 +13,21 @@ public class Longest_Substring {
         int finalLongestSubString = 0;
         char stopChar = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (visited.containsKey(arr[i])) {
-                localLongestSubstring = (i + 1) - visited.get(arr[i]);
-                visited.put(arr[i], i + 1);
-                stopChar = arr[i];
+            int index = i + 1;
+            char currChar = arr[i];
+            int stopCharIndexInMap = 0;
+            if (visited.containsKey(currChar)) {
+                stopCharIndexInMap = visited.get(stopChar);
+                localLongestSubstring = index - stopCharIndexInMap + 1 ;
+                visited.put(currChar, index);
+                stopChar = currChar;
             } else {
-                visited.put(arr[i], i + 1);
+                visited.put(currChar, index);
+                stopChar = currChar;
                 if (stopChar != 0) {
-                    localLongestSubstring = arr.length - visited.get(stopChar);
+                    localLongestSubstring = index - visited.get(stopChar) + 1;
                 } else {
-                    localLongestSubstring = i + 1;
+                    localLongestSubstring = 1;
                 }
 
             }
@@ -30,18 +35,12 @@ public class Longest_Substring {
             finalLongestSubString = Math.max(localLongestSubstring, finalLongestSubString);
         }
 
-
-        if (s.length() > 0) {
-           // stopChar = arr[arr.length - 1];
-            localLongestSubstring = arr.length - visited.get(stopChar) + 1;
-            finalLongestSubString = Math.max(localLongestSubstring, finalLongestSubString);
-        }
         return finalLongestSubString;
 
     }
 
     public static void main(String[] args) {
-        int result = lengthOfLongestSubstring("aabbcccc");
+        int result = lengthOfLongestSubstring("abcabcbb");
         System.out.println(result);
     }
 }
